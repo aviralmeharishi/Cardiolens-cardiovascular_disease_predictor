@@ -16,15 +16,6 @@ def prediction(input_list):
 
     pred = model.predict_proba([input_list])[:,1][0]
 
-    if pred > 0.5:
-        return f'''You Have More Chances of Getting Diseased
-Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
-Take Care'''
-
-    else:
-        return f'''You Have less Chances of Getting Diseased
-Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
-Take Care'''
 
 
 
@@ -42,7 +33,7 @@ def main():
 
     age = (lambda x: 0 if x < 30 else 1 if x < 50 else 2)(st.slider('Tell us How old are you ? ', min_value = 18, max_value = 100, step = 1))
 
-    bmi = w/(h/100)**2
+    bmi = w/((h/100)**2)
 
     ckup = (lambda x: 0 if x=='Never' else 1 if x=='Within the past year' else 2 if 
     x=='Within the past 2 years' else 3 if x=='Within the past 5 years' else 4)(st.selectbox("When was the last time you had a check-up?"\
@@ -89,11 +80,17 @@ def main():
 
     input_list = [h_t, w_t, gh, bg, age, bmi_t, ckup, smk, sex, dp, gv, fr, fry, alco, dep, mar, exer, skin, other, arth, diab, vac]
 
-
     if st.button('Show Prediction'):
-        response = prediction(input_list)
-        st.success(response)
-
+            pred = prediction(input_list)
+            
+            if pred > 0.5:
+                st.failure(f'''⚠️ You Have More Chances of Getting Diseased
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Take Care!''')
+            else:
+                st.success(f'''✅ You Have Less Chances of Getting Diseased
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Stay Healthy!''')
 
 if __name__ == '__main__':
     main()
