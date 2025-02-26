@@ -21,13 +21,9 @@ Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
 Take Care'''
 
     if pred > 0.5:
-          st.failure(f'''⚠️ You Have More Chances of Getting Diseased
-Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-Take Care!''')
-        else:
-            st.success(f'''✅ You Have Less Chances of Getting Diseased
-Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-Stay Healthy!''')
+        return f'''You Have More Chances of Getting Diseased
+Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
+Take Care'''
 
     else:
         return f'''You Have less Chances of Getting Diseased
@@ -106,5 +102,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-                                        
