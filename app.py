@@ -15,22 +15,21 @@ def prediction(input_list):
     input_list = np.array(input_list, dtype = object)
 
     pred = model.predict_proba([input_list])[:,1][0]
-
-
-  
+    
     if pred > 0.25:
         results = f'''⚠️ You Have More Chances of Getting Diseased
-        Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-        Take Care!'''
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Take Care!'''
         st.error(results)
-        return results
+        return results  # This ensures the function exits here
+    
     else:
         result = f'''✅ You Have Less Chances of Getting Diseased
-        Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-        Stay Healthy!'''
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Stay Healthy!'''
         st.success(result)
+        return result
 
-        return result 
 
 
 def main():
