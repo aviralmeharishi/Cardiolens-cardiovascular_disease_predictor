@@ -17,14 +17,14 @@ def prediction(input_list):
     pred = model.predict_proba([input_list])[:,1][0]
 
 
-  if pred > 0.5:
-            st.failure(f'''⚠️ You Have More Chances of Getting Diseased
-Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-Take Care!''')
-        else:
-            st.success(f'''✅ You Have Less Chances of Getting Diseased
-Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-Stay Healthy!''')
+    if pred > 0.5:
+                st.failure(f'''⚠️ You Have More Chances of Getting Diseased
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Take Care!''')
+    else:
+                st.success(f'''✅ You Have Less Chances of Getting Diseased
+    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+    Stay Healthy!''')
 
 
 
