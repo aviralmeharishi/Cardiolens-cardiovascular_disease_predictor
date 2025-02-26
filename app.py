@@ -16,6 +16,23 @@ def prediction(input_list):
 
     pred = model.predict_proba([input_list])[:,1][0]
 
+    gp = f'''You Have More Chances of Getting Diseased
+Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
+Take Care'''
+
+    if pred > 0.5:
+          st.failure(f'''⚠️ You Have More Chances of Getting Diseased
+Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+Take Care!''')
+        else:
+            st.success(f'''✅ You Have Less Chances of Getting Diseased
+Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
+Stay Healthy!''')
+
+    else:
+        return f'''You Have less Chances of Getting Diseased
+Your Probability Of Having Cardio Vascular Disease is {round(pred,2)}
+Take Care'''
 
 
 
@@ -80,23 +97,14 @@ def main():
 
     input_list = [h_t, w_t, gh, bg, age, bmi_t, ckup, smk, sex, dp, gv, fr, fry, alco, dep, mar, exer, skin, other, arth, diab, vac]
 
+
     if st.button('Show Prediction'):
-            pred = prediction(input_list)
-            
-            if pred > 0.25:
-                st.failure(f'''⚠️ You Have More Chances of Getting Diseased
-    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-    Take Care!''')
-            else:
-                st.success(f'''✅ You Have Less Chances of Getting Diseased
-    Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
-    Stay Healthy!''')
+        response = prediction(input_list)
+        st.success(response)
+
 
 if __name__ == '__main__':
     main()
 
 
                                         
-    
-    
-
