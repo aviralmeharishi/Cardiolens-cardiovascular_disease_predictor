@@ -18,13 +18,15 @@ def prediction(input_list):
 
 
     if pred > 0.25:
-                st.error(f'''⚠️ You Have More Chances of Getting Diseased
+                result = (f'''⚠️ You Have More Chances of Getting Diseased
     Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
     Take Care!''')
+                st.error(result)
     else:
-                st.success(f'''✅ You Have Less Chances of Getting Diseased
+                result = (f'''✅ You Have Less Chances of Getting Diseased
     Your Probability Of Having Cardiovascular Disease is {round(pred, 2)}
     Stay Healthy!''')
+                st.success(result)
 
 
 
