@@ -28,6 +28,8 @@ def prediction(input_list):
     Stay Healthy!''')
                 st.success(result)
 
+    return result
+
 
 
 def main():
