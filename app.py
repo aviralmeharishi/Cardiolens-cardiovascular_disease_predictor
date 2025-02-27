@@ -58,13 +58,13 @@ def main():
 
     dp = (lambda x: 0 if x=='Non Veg' else 1)(st.selectbox('Tell Us About Your Diet Preference ?', ['Veg', "Non Veg"]))
 
-    gv = st.slider('Rate Your Green Vegetable Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 2)
+    gv = st.slider('Rate Your Green Vegetable Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 1)
 
-    fr = st.slider('Rate Your Fruit Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 2)
+    fr = st.slider('Rate Your Fruit Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 1)
 
-    fry = st.slider('Rate Your Fried Food Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 2)
+    fry = st.slider('Rate Your Fried Food Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 1)
 
-    alco = st.slider('Rate Your Alcohol Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 2)
+    alco = st.slider('Rate Your Alcohol Consumption (where low is 1 and high is 4)', min_value = 1, max_value = 4, step = 1)
 
     dep = (lambda x: 0 if x=='No' else 1)(st.selectbox('Are You Feeling Depressed ?', ['Yes', "No"]))
 
