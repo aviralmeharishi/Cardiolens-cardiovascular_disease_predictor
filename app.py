@@ -32,7 +32,7 @@ def gemini_suggestions_via_api(pred, input_features):
     """
 
     try:
-        gemini_model = genai.GenerativeModel('gemini-pro')
+        gemini_model = genai.GenerativeModel('gemini-1.5-flash')
         response = gemini_model.generate_content(prompt)
         return response.text
     except Exception as e:
