@@ -1,3 +1,4 @@
 lightgbm
 streamlit
 scikit-learn
+google-generativeai
