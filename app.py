@@ -4,7 +4,7 @@ import pickle
 import google.generativeai as genai
 
 # Configure Gemini API
-genai.configure(api_key="YOUR_GEMINI_API_KEY") 
+genai.configure(api_key=st.secrets["YOUR_GEMINI_API_KEY"]) 
 
 # Load model and transformer
 with open('final_model.pkl', 'rb') as file:
